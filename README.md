@@ -61,7 +61,6 @@ and delivery tasks with MySQL database integration.
 │ (Persistent Data) │
 └─────────────────────────────────────┘
 
-text
 
 
 ---
@@ -103,7 +102,6 @@ text
 Vehicle (1) ──────── (Many) DeliveryTask
 Driver (1) ──────── (Many) DeliveryTask
 
-text
 
 
 ### Vehicle Table
@@ -146,23 +144,25 @@ driver_id               BIGINT (Foreign Key)
 delivered_at            TIMESTAMP
 created_at              TIMESTAMP
 updated_at              TIMESTAMP
+
+
 🚀 Getting Started
 Prerequisites
-text
 
 - Java 17 or higher
 - MySQL 8.0
 - Maven 3.6+
+
 Step 1: Clone Repository
 Bash
-
 git clone https://github.com/sivanagaraj9629/fleet-management-system-.git
 cd fleet-management-system-
+
 Step 2: Database Setup
 SQL
-
 CREATE DATABASE fleet_management;
 USE fleet_management;
+
 Step 3: Configuration
 Update src/main/resources/application.properties:
 
@@ -173,15 +173,16 @@ spring.datasource.username=root
 spring.datasource.password=your_password
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
+
 Step 4: Run Application
 Bash
 
 ./mvnw spring-boot:run
 Application starts on:
 
-text
-
 http://localhost:8080
+
+
 📝 Sample API Requests
 Register Vehicle
 JSON
@@ -195,6 +196,7 @@ Content-Type: application/json
     "vehicleType": "TRUCK",
     "lastServiceDate": "2024-01-15"
 }
+
 Response (201 Created):
 
 JSON
@@ -207,6 +209,7 @@ JSON
     "maintenanceStatus": "ACTIVE",
     "createdAt": "2024-05-27T15:00:00"
 }
+
 Register Driver
 JSON
 
@@ -221,6 +224,7 @@ Content-Type: application/json
     "email": "rajesh@example.com",
     "maxShiftHours": 10
 }
+
 Response (201 Created):
 
 JSON
@@ -233,6 +237,7 @@ JSON
     "maxShiftHours": 10,
     "createdAt": "2024-05-27T15:00:00"
 }
+
 Update Vehicle Maintenance Status
 JSON
 
@@ -247,8 +252,8 @@ JSON
     "maintenanceStatus": "MAINTENANCE",
     "updatedAt": "2024-05-27T16:00:00"
 }
+
 📁 Project Structure
-text
 
 src/main/java/com/fleet/management/
 ├── controller/
@@ -278,6 +283,7 @@ src/main/java/com/fleet/management/
 │   ├── DuplicateResourceException.java
 │   └── BusinessException.java
 └── ManagementApplication.java
+
 ✅ Testing Status
 Feature	Status
 Vehicle Registration	✅ Tested
@@ -291,12 +297,14 @@ Driver Delete	✅ Tested
 Exception Handling	✅ Tested
 Data Validation	✅ Tested
 Database Connection	✅ Tested
+
 🔧 Error Handling
 Exception	HTTP Status	Description
 ResourceNotFoundException	404 Not Found	Resource not found
 DuplicateResourceException	400 Bad Request	Duplicate entry
 BusinessException	400 Bad Request	Business rule violation
 General Exception	500 Internal Server Error	Unexpected error
+
 Error Response Format:
 
 JSON
@@ -306,6 +314,7 @@ JSON
     "message": "Vehicle not found with id: 1",
     "timestamp": "2024-05-27T15:00:00"
 }
+
 🚧 Future Enhancements
  JWT Authentication & Authorization
  Route Optimization Algorithm
@@ -314,16 +323,19 @@ JSON
  Unit & Integration Tests
  Real-time GPS Tracking
  Advanced Filtering & Pagination
+
 📊 Project Stats
 Total Entities: 3 (Vehicle, Driver, DeliveryTask)
 Total API Endpoints: 12+
 Database Tables: 3
 Exception Types: 4
 Technology Stack: 7 technologies
+
 👨‍💻 Author
 Sivanagaraj
 
 GitHub: @sivanagaraj9629
+
 📄 License
 This project is open source and available under the MIT License.
 
